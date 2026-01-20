@@ -13,6 +13,12 @@
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
+  "engines": {
+    "node": "22.18.0"
+  },
+  "pnpm": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
