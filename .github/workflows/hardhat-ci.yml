@@ -1,0 +1,31 @@
+name: Hardhat CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  contract-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Hardhat compile
+        run: pnpm hardhat compile
+        working-directory: packages/contract
+
+      - name: Hardhat test
+        run: pnpm hardhat test
+        working-directory: packages/contract
