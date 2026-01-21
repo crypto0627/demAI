@@ -1,0 +1,26 @@
+[package]
+name = "oracle"
+version = "0.1.0"
+authors = ["Leonz Chang <bellerophon00530@gmail.com>"]
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.49.0", features = ["macros"] }
+ethers = "2.0.14"
+reqwest = "0.13.1"
+env_logger = "0.11.8"
+clap = { version = "4.5.54", features = ["derive", "env", "cargo"] }
+strum = "0.27.2"
+strum_macros = "0.27.2"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+tracing = { version = "0.1.44" }
+tracing-subscriber = { features = [
+    "env-filter",
+    "fmt",
+    "json",
+], version = "0.3.22" }
+actix-web = { version = "4.11.0" }
+snafu = { features = ["std"], version = "0.8.9" }
